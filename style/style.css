@@ -12,3 +12,11 @@ nav{
     justify-content: space-evenly;
     align-items: center;
 }
+/*  Elemento del nav*/
+.navElement{
+    background-color: rgb(255, 203, 211);
+}
+/*  Cambio de color del navElement cuando el ratón pasa por encima*/
+.navElement:hover{
+    background-color: rgb(226, 153, 165);
+}
