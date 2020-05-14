@@ -15,6 +15,11 @@ nav{
 /*  Elemento del nav*/
 .navElement{
     background-color: rgb(255, 203, 211);
+    border-radius: 5px;
+    padding: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow: 3px 3px 0 rgb(124, 95, 100);
 }
 /*  Cambio de color del navElement cuando el ratón pasa por encima*/
 .navElement:hover{
