@@ -6,26 +6,40 @@ body, h1, h2, h3, h4{
     margin: 0px;
 }
 
+/*HEADER*/
+header{
+    background-color: rgb(255, 227, 231);
+    padding: 20px;
+    text-align: center;
+}
+
+
 /*NAV*/
 nav{
+    align-items: flex-start;
     display: flex;
+    flex-direction: column;
+    height: 200px;
     justify-content: space-evenly;
-    align-items: center;
 }
 /*  Elemento del nav*/
-.navElement{
-    
-}
-.navElement a{
+nav a{
     background-color: rgb(255, 203, 211);
     border-radius: 5px;
-    box-shadow: 3px 3px 0 rgb(124, 95, 100);
     color: black;
     cursor: pointer;
-    padding: 50px;
+    margin-left: 15px;
+    padding: 30px;
     padding-top: 10px;
     padding-bottom: 10px;
     text-decoration: none;
+    transition-duration: 0.4s;
+    transition-property: box-shadow;
+}
+/*  Cambio de color del navElement cuando el ratón pasa por encima*/
+nav a:hover{
+    background-color: rgb(226, 153, 165);
+    box-shadow: 3px 3px 0 rgb(124, 95, 100);
 }
 /*Borde debajo del nav*/
 #borde-bot{
@@ -35,8 +49,4 @@ nav{
     height: 1px;
     margin: 30px 0;
     width: 100%;
-}
-/*  Cambio de color del navElement cuando el ratón pasa por encima*/
-.navElement a:hover{
-    background-color: rgb(226, 153, 165);
 }
