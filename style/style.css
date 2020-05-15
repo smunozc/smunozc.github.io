@@ -71,10 +71,17 @@ main{
     background-position: center;
     background-repeat: no-repeat;
     background-size: 80%;
-    height: 300px;
+    display: flex;
+    height: 500px;
+    justify-content: center;
+    position: relative;
     width: 100%;
 }
-
+.mickey img{
+    bottom: 0;
+    position: absolute;
+    width: 90%;
+}
 /*Footer*/
 footer{
     margin: 10px;
