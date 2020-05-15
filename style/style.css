@@ -16,10 +16,20 @@ nav{
 .navElement{
     background-color: rgb(255, 203, 211);
     border-radius: 5px;
+    cursor: pointer;
     padding: 50px;
     padding-top: 10px;
     padding-bottom: 10px;
     box-shadow: 3px 3px 0 rgb(124, 95, 100);
+}
+/*Borde debajo del nav*/
+#borde-bot{
+    background: linear-gradient(to right,#f05a28 0,#e80a89 100%);
+    content: "";
+    display: block;
+    height: 1px;
+    margin: 30px 0;
+    width: 100%;
 }
 /*  Cambio de color del navElement cuando el ratón pasa por encima*/
 .navElement:hover{
