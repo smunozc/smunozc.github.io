@@ -15,20 +15,19 @@ header{
 
 
 /*NAV*/
+/*estilo del nav*/
 nav{
     align-items: flex-start;
     display: flex;
-    flex-direction: column;
-    height: 200px;
     justify-content: space-evenly;
+    margin-top: 20px;
 }
 /*  Elemento del nav*/
-nav a{
+nav .navElement{
     background-color: rgb(255, 203, 211);
     border-radius: 5px;
     color: black;
     cursor: pointer;
-    margin-left: 15px;
     padding: 30px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -37,9 +36,9 @@ nav a{
     transition-property: box-shadow;
 }
 /*  Cambio de color del navElement cuando el ratón pasa por encima*/
-nav a:hover{
+nav .navElement:hover{
     background-color: rgb(226, 153, 165);
-    box-shadow: 3px 3px 0 rgb(124, 95, 100);
+    box-shadow: 0 8px 10px 0 rgb(124, 95, 100), 0 6px 20px 0 rgb(124, 95, 100);
 }
 /*Borde debajo del nav*/
 #borde-bot{
@@ -47,6 +46,6 @@ nav a:hover{
     content: "";
     display: block;
     height: 1px;
-    margin: 30px 0;
+    margin: 20px 0;
     width: 100%;
 }
