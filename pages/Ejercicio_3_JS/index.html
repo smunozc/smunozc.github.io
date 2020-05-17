@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3 JS</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="validacion">
+            <div class="user-block">
+                <p>Usuario: </p>
+                <input id="usuario" type="text">
+                <p id="user-req">El campo usuario es requerido</p>
+                <p id="user-length">El usuario debe tener al menos 3 caracteres</p>
+            </div>
+            <div class="passwd-block">
+                <p>Contraseña: </p>
+                <input id="passwd" type="password">
+                <p id="passwd-req">El campo contraseña es requerido</p>
+                <p id="passwd-length">La contraseña debe tener al menos 3 caracteres</p>
+            </div>
+            <input type="button" value="Entrar" onclick="validar();">
+            <p id="validacion-correcta">¡Validación Correcta!</p>
+        </div>
+    </div>
+    <script src="./utils.js"></script>
+</body>
+
+</html>
