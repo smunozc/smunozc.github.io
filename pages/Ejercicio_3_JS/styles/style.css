@@ -13,7 +13,7 @@ h4 {
 }
 
 body {
-    background-color: gray;
+    background-color: rgb(255, 216, 222);
 }
 
 /*Container*/
@@ -23,8 +23,8 @@ body {
 
 .validacion {
     align-items: center;
-    background-color: #ccc;
-    border: 2px solid silver;
+    background-color: rgb(226, 153, 165);
+    border: 2px solid rgb(255, 148, 166);
     border-radius: 10px;
     display: flex;
     flex-wrap: wrap;
