@@ -23,15 +23,15 @@ body {
 
 .validacion {
     align-items: center;
-    background-color: rgb(255, 180, 193);
-    border: 2px solid rgb(255, 148, 166);
+    background-color: rgb(255, 203, 211);
+    border: 2px solid rgb(255, 168, 182);
     border-radius: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin: 50px auto;
     padding: 30px;
-    width: 400px;
+    width: 350px;
 }
 
 .validacion>p {
