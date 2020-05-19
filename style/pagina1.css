@@ -1,9 +1,7 @@
 #stitch {
     position: absolute;
-    top: 60%;
-    bottom: 0;
-    left: -5%;
-    right: 0;
+    top: 55%;
+    right: -7%;
     width: 20%;
 }
 /*Seccion de imagenes*/
@@ -51,6 +49,10 @@
 }
 
 @media (min-width: 640px) {
+    #stitch{
+        top: 60%;
+        right: -10%;
+    }
     .imagenes{
         justify-content: space-between;
     }
