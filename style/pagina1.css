@@ -1,14 +1,67 @@
-.stitch{
+.stitch {
     position: absolute;
-    width: 35%;
+    top: 0;
+    bottom: 0;
+    left: 20%;
+    right: 0;
+    width: 45%;
 }
-.imagenes{
+/*Seccion de imagenes*/
+.imagenes {
+    align-items: center;
     display: flex;
-    justify-content: center;
-    position: relative;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     width: 100%;
 }
-.imagen1{
+/*Carrousel de imagenes*/
+.carrousel{
+    order: 1;
+    position: relative;
+    width: 90%;
+}
+/*imagen del carrousel*/
+.imagen1 {
     border: 2px solid rgb(226, 153, 165);
-    width: 80%;
+    width: 100%;
+}
+/*Botones*/
+.btn{
+    background-color: rgb(255, 203, 211);
+    border-radius: 5px;
+    border-style: none;
+    cursor: pointer;
+    padding: 3%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    transition-duration: 0.4s;
+    transition-property: box-shadow;
+}
+.btn:hover{
+    background-color: rgb(226, 153, 165);
+    box-shadow: 0 8px 10px 0 rgb(124, 95, 100), 0 6px 20px 0 rgb(124, 95, 100);
+}
+/*Para ir a la foto anterior*/
+.atras{
+    order: 2;
+}
+/*Para ir a la foto siguiente*/
+.siguiente{
+    order: 3;
+}
+
+@media (min-width: 640px) {
+    .imagenes{
+        justify-content: space-between;
+    }
+    .carrousel{
+        order: 2;
+        width: 70%;
+    }
+    .atras{
+       order: 1;
+    }
+    .siguiente{
+       order: 3;
+    }
 }
