@@ -53,9 +53,6 @@
         top: 60%;
         right: -10%;
     }
-    .imagenes{
-        justify-content: space-between;
-    }
     .carrousel{
         order: 2;
         width: 70%;
