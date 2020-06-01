@@ -1,4 +1,4 @@
-let imagenes = ['../../img/imagen1.jpg','../../img/imagen2.jpg'];
+let imagenes = ['../../img/imagen1.jpg','../../img/imagen2.jpg', '../../img/imagen3.jpg'];
 let contador = 0;
 
 function carrousel(direccion){

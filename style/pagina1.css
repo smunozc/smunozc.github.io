@@ -1,6 +1,14 @@
+/*Lilo y Stitch*/
+#lilo{
+    position: absolute;
+    bottom: 0;
+    left: -10%;
+    width: 20%;
+}
+
 #stitch {
     position: absolute;
-    top: 55%;
+    bottom: 0;
     right: -7%;
     width: 20%;
 }
@@ -49,13 +57,15 @@
 }
 
 @media (min-width: 640px) {
+    #lilo{
+        left: -13%;
+    }
     #stitch{
-        top: 60%;
-        right: -10%;
+        right: -13%;
     }
     .carrousel{
         order: 2;
-        width: 70%;
+        width: 40%;
     }
     .atras{
        order: 1;
