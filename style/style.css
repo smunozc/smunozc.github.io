@@ -40,23 +40,21 @@ nav {
     margin-top: 20px;
 }
 
-/*  Elemento del nav*/
-nav .navElement {
+/*Botones*/
+.btn{
     background-color: rgb(255, 203, 211);
     border-radius: 5px;
+    border-style: none;
     color: black;
     cursor: pointer;
-    margin: 5px;
-    padding: 30px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 1.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     text-decoration: none;
     transition-duration: 0.4s;
     transition-property: box-shadow;
 }
-
-/*  Cambio de color del navElement cuando el ratón pasa por encima*/
-nav .navElement:hover {
+.btn:hover{
     background-color: rgb(226, 153, 165);
     box-shadow: 0 8px 10px 0 rgb(124, 95, 100), 0 6px 20px 0 rgb(124, 95, 100);
 }
@@ -75,6 +73,10 @@ nav .navElement:hover {
 main {
     height: 700px;
     padding: 10px;
+}
+
+.main-pictures-movil{
+    height: 500px;
 }
 
 .mickey {
@@ -102,6 +104,49 @@ footer {
     margin: 10px;
 }
 
+/*Página pictures*/
+/*Lilo y Stitch*/
+#lilo{
+    position: absolute;
+    bottom: 0;
+    left: -8%;
+    width: 20%;
+}
+
+#stitch {
+    position: absolute;
+    bottom: 0;
+    right: -7%;
+    width: 20%;
+}
+/*Seccion de imagenes*/
+.imagenes {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+}
+/*Carrousel de imagenes*/
+.carrousel{
+    order: 1;
+    position: relative;
+    width: 90%;
+}
+/*imagen del carrousel*/
+#imagen1 {
+    border: 2px solid rgb(226, 153, 165);
+    width: 100%;
+}
+/*Para ir a la foto anterior*/
+.atras{
+    order: 2;
+}
+/*Para ir a la foto siguiente*/
+.siguiente{
+    order: 3;
+}
+
 /*Breakpoints responsivo*/
 @media (min-width: 420px) {
     .mickey img {
@@ -110,6 +155,7 @@ footer {
 }
 
 @media (min-width: 640px) {
+    /*del index.html*/
     main{
         height: 900px;
     }
@@ -122,6 +168,36 @@ footer {
     .mickey img {
         width: 40%;
     }
+
+    /*De pictures.html*/
+    #lilo{
+        left: -13%;
+    }
+
+    #stitch{
+        right: -13%;
+    }
+
+    .carrousel{
+        order: 2;
+        width: 40%;
+    }
+
+    .atras{
+       order: 1;
+    }
+
+    .siguiente{
+       order: 3;
+    }
+
+    /*Botones*/
+    .btn{
+        padding: 2rem;
+        padding-top: 1.2rem;
+        padding-bottom: 1.2rem;
+    }
+
 }
 
 @media (min-width: 1024px) {
