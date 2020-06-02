@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,27 +8,36 @@
     <link rel="stylesheet" href="../../style/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Pacifico&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div class="container">
+
         <header>
             <h2 class="letra1">Fotografías</h2>
         </header>
+
         <nav class="letra2 negrita">
             <a class="btn" href="../../index.html">Home</a>
         </nav>
+
         <div id="borde-bot"></div>
+
         <main class="letra2 main-pictures-movil">
+
             <div class="imagenes">
                 <div class="carrousel">
                     <img id="lilo" src="../../img/lilo.svg" alt="Lilo">
                     <img id="stitch" src="../../img/Stitch.svg" alt="Stitch">
                     <img id="imagen1" src="../../img/imagen1.jpg" alt="Imagen">
                 </div>
+
                 <input class="btn siguiente letra1" type="button" value="Siguiente" onclick="carrousel('atras')">
                 <input class="btn atras letra1" type="button" value="Atras" onclick="carrousel('siguiente')">
             </div>
+
         </main>
     </div>
     <script src="../../utils/carrousel.js"></script>
 </body>
+
 </html>

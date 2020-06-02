@@ -41,7 +41,7 @@ nav {
 }
 
 /*Botones*/
-.btn{
+.btn {
     background-color: rgb(255, 203, 211);
     border-radius: 5px;
     border-style: none;
@@ -54,7 +54,8 @@ nav {
     transition-duration: 0.4s;
     transition-property: box-shadow;
 }
-.btn:hover{
+
+.btn:hover {
     background-color: rgb(226, 153, 165);
     box-shadow: 0 8px 10px 0 rgb(124, 95, 100), 0 6px 20px 0 rgb(124, 95, 100);
 }
@@ -75,7 +76,7 @@ main {
     padding: 10px;
 }
 
-.main-pictures-movil{
+.main-pictures-movil {
     height: 500px;
 }
 
@@ -106,7 +107,7 @@ footer {
 
 /*Página pictures*/
 /*Lilo y Stitch*/
-#lilo{
+#lilo {
     position: absolute;
     bottom: 0;
     left: -8%;
@@ -119,6 +120,7 @@ footer {
     right: -7%;
     width: 20%;
 }
+
 /*Seccion de imagenes*/
 .imagenes {
     align-items: center;
@@ -127,23 +129,27 @@ footer {
     justify-content: space-evenly;
     width: 100%;
 }
+
 /*Carrousel de imagenes*/
-.carrousel{
+.carrousel {
     order: 1;
     position: relative;
     width: 90%;
 }
+
 /*imagen del carrousel*/
 #imagen1 {
     border: 2px solid rgb(226, 153, 165);
     width: 100%;
 }
+
 /*Para ir a la foto anterior*/
-.atras{
+.atras {
     order: 2;
 }
+
 /*Para ir a la foto siguiente*/
-.siguiente{
+.siguiente {
     order: 3;
 }
 
@@ -155,8 +161,9 @@ footer {
 }
 
 @media (min-width: 640px) {
+
     /*del index.html*/
-    main{
+    main {
         height: 900px;
     }
 
@@ -170,29 +177,29 @@ footer {
     }
 
     /*De pictures.html*/
-    #lilo{
+    #lilo {
         left: -13%;
     }
 
-    #stitch{
+    #stitch {
         right: -13%;
     }
 
-    .carrousel{
+    .carrousel {
         order: 2;
         width: 40%;
     }
 
-    .atras{
-       order: 1;
+    .atras {
+        order: 1;
     }
 
-    .siguiente{
-       order: 3;
+    .siguiente {
+        order: 3;
     }
 
     /*Botones*/
-    .btn{
+    .btn {
         padding: 2rem;
         padding-top: 1.2rem;
         padding-bottom: 1.2rem;
@@ -201,7 +208,7 @@ footer {
 }
 
 @media (min-width: 1024px) {
-    main{
+    main {
         height: 1200px;
     }
 
