@@ -53,6 +53,7 @@ nav {
     text-decoration: none;
     transition-duration: 0.4s;
     transition-property: box-shadow;
+    z-index: 5;
 }
 
 .btn:hover {
@@ -72,7 +73,10 @@ nav {
 
 /*Main*/
 main {
+    display: flex;
+    flex-wrap: wrap;
     height: 700px;
+    justify-content: space-evenly;
     padding: 10px;
 }
 
