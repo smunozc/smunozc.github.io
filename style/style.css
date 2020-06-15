@@ -53,7 +53,7 @@ nav {
     text-decoration: none;
     transition-duration: 0.4s;
     transition-property: box-shadow;
-    z-index: 5;
+    z-index: 1;
 }
 
 .btn:hover {
@@ -64,7 +64,6 @@ nav {
 /*Borde debajo del nav*/
 #borde-bot {
     background: linear-gradient(to right, rgb(226, 153, 165) 40%, rgb(58, 137, 255) 100%);
-    content: "";
     display: block;
     height: 2px;
     margin: 20px 0;
@@ -157,6 +156,30 @@ footer {
     order: 3;
 }
 
+/*Página Musica*/
+/*Direccion del flex en columna*/
+.flex-column {
+    flex-direction: column;
+    justify-content: start;
+}
+
+/*Caja en la que se encuentran el titulo y la canción*/
+.cancion {
+    color: #FFF;
+    text-align: center;
+    font-family: "lato", sans-serif;
+    font-weight: 300;
+    font-size: 2rem;
+    letter-spacing: 10px;
+}
+
+/*Titulo de la canción*/
+.cancion p {
+    background: -webkit-linear-gradient(white, #4d647a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 /*Breakpoints responsivo*/
 @media (min-width: 420px) {
     .mickey img {
@@ -166,7 +189,7 @@ footer {
 
 @media (min-width: 640px) {
 
-    /*del index.html*/
+    /*index.html*/
     main {
         height: 900px;
     }
@@ -180,7 +203,7 @@ footer {
         width: 40%;
     }
 
-    /*De pictures.html*/
+    /*pictures.html*/
     #lilo {
         left: -13%;
     }
@@ -200,6 +223,15 @@ footer {
 
     .siguiente {
         order: 3;
+    }
+
+    /*music.html*/
+    .cancion {
+        font-size: 3rem;
+    }
+
+    .reproductor {
+        width: 30rem;
     }
 
     /*Botones*/
