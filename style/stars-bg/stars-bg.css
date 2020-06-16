@@ -1,4 +1,4 @@
-.container {
+main {
     height: 100%;
     background: radial-gradient(ellipse at bottom, #344f6e 0%, #090a0f 100%);
     overflow: hidden;

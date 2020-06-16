@@ -167,6 +167,8 @@ footer {
 /*Direccion del flex en columna*/
 .flex-column {
     flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
     justify-content: start;
 }
 
