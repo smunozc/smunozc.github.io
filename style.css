@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fleur+De+Leah&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 body, div, p, h1, h2, h3, h4, h5 {
     margin: 0;
@@ -35,13 +36,15 @@ body, div, p, h1, h2, h3, h4, h5 {
     border: none;
 }
 
-#nameGenerator_display {
+.display {
     background-color: antiquewhite;
     border-radius: 6px;
-    font-family: 'Fleur De Leah', cursive;
-    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bebas Neue', cursive;
+    height: 150px;
     margin: 20px auto;
-    text-align: center;
     font-size: 4.5rem;
     width: 90%;
 }
