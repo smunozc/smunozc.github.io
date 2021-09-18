@@ -1,36 +1,31 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>19-06-19</title>
-    <link rel="stylesheet" href="./style/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Pacifico&display=swap" rel="stylesheet">
+    <title>Sandbox</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./name_generator.js" defer></script>
 </head>
-
 <body>
     <div class="container">
+        <h1>A sandbox</h1>
+        <p>This page has been created to experiment and try things when I'm bored.</p>
 
-        <header>
-            <h2 class="letra1">19-06-19</h2>
-        </header>
-
-        <nav class="letra2 negrita">
-            <a class="btn" href="./pages/Fotografías/pictures.html">Fotos</a>
-            <a class="btn" href="./pages/Musica/music.html">Musica</a>
-        </nav>
-
-        <div id="borde-bot"></div>
-
-        <main class="letra2">
-            <div class="mickey"><img src="./img/disney-castle.png" alt="Castillo disney"></div>
-        </main>
-
-        <footer class="letra2">
-            <p>Salvador Muñoz</p>
-        </footer>
+        <div id="nameGenerator" class="section">
+            <h2>Name generator</h2>
+            <form class="nameGenerator_form">
+                <p>What's your real name?</p>
+                <input type="text" id="nameGenerator_realName" placeholder="Insert it here">
+                <select id="nameGenerator_nameType">
+                    <option value="rus">RUS</option>
+                    <option value="esp">ESP</option>
+                </select>
+                <input type="button" value="Generate" id="pButton">
+            </form>
+            <div id="nameGenerator_display"></div>
+        </div>
     </div>
 </body>
-
 </html>
