@@ -1,0 +1,31 @@
+<div class="container">
+    <h1>JSON to Interface</h1>
+    <form class="form">
+        <div>
+            <mat-form-field class="inputField">
+                <mat-label>JSON</mat-label>
+                <textarea matInput
+                cdkTextareaAutosize
+                #autosize="cdkTextareaAutosize"
+                cdkAutosizeMinRows="1"
+                cdkAutosizeMaxRows="40"
+                [formControl]="jsonControl"></textarea>
+            </mat-form-field>
+        </div>
+        <div class="cards">
+            @for (interface of interfaces(); track $index) {
+                <mat-card class="card">
+                    <mat-card-header>
+                        <mat-card-title>{{ interface.interfaceName }}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                        {{ jsonConverterService.stringifyObjectInterface(interface.interfaceValue) }}
+                    </mat-card-content>
+                </mat-card>
+            }
+        </div>
+    </form>
+    <div class="converterButton">
+        <button mat-button [disabled]="jsonControl.invalid" (click)="submitJson()">Convert</button>
+    </div>
+</div>
