@@ -1,48 +1,58 @@
-import { Injectable } from '@angular/core';
-import { InterfaceModel } from '../model/interface-model';
+import { Injectable, signal, WritableSignal } from '@angular/core';
+import { ObjectInterface } from '../model/object-interface';
+import { AttributeInterface } from '../model/attribute-interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class JsonConverterService {
 
-  constructor() { }
+  readonly objectInterfaces: WritableSignal<Array<ObjectInterface>> = signal(null);
 
-  convertJsonToInterface(jsonToConvert: string, mainInterfaceName: string): Array<any> {
+  convertJsonToInterface(jsonToConvert: string, mainInterfaceName: string): void {
     const json: any = JSON.parse(jsonToConvert);
-    let interfaces: Array<InterfaceModel> = [];
+    let interfaces: Array<ObjectInterface> = [];
     this.buildInterface(json, interfaces, mainInterfaceName);
-    return interfaces;
+    this.objectInterfaces.set(interfaces);
   }
 
-  stringifyObjectInterface(objectInterface: any): string {
-    const objectKeys = Object.keys(objectInterface);
-    let stringInterface = '{\n';
+  stringifyObjectInterface(interfaceName: string, objectInterface: any): string {
+    let stringInterface = `export interface ${interfaceName} {\n`;
     for(let attr in objectInterface) {
-      stringInterface += `\t"${attr}": ${objectInterface[attr]};\n`
+      stringInterface += `\t${attr}: ${objectInterface[attr]};\n`
     }
     return stringInterface += '}'
   }
 
-  private buildInterface(json: any, interfaces: Array<InterfaceModel>, interfaceAttributeName: string): any {
-    interfaces.push({interfaceName: interfaceAttributeName, interfaceValue: {}});
-    for(let attr in json) {
-      const attrType: string = typeof json[attr];
-      if(Array.isArray(json[attr])) {
-        let interfaceName: string = this.convertAttributeNameToCamelCase(attr);
-        interfaces[interfaces.length - 1].interfaceValue[attr] = 'Array<' + interfaceName + '>';
-        this.buildInterface(json[attr][0], interfaces, interfaceName);
+  private buildInterface(currentObjectJson: any, processedInterfaces: Array<ObjectInterface>, interfaceAttributeName: string): void {
+    if(!this.findInterfaceByName(interfaceAttributeName, processedInterfaces)) {
+      processedInterfaces.push({name: interfaceAttributeName, value: {}});
+    }
 
-      } else if(attrType === 'object' && json[attr] !== null) {
-        let interfaceName: string = this.convertAttributeNameToCamelCase(attr);
-        interfaces[interfaces.length - 1].interfaceValue[attr] = interfaceName;
-        //if(!interfaces.find(interface => interface.interfaceName === attr)) {
-            //this.buildInterface(json[attr], interfaces, attr);
-        //}
-        this.buildInterface(json[attr], interfaces, interfaceName);
+    for(let attrName in currentObjectJson) {
+      const attrInCurrentObject: AttributeInterface = {
+        name: attrName,
+        type: currentObjectJson[attrName] !== null ? typeof currentObjectJson[attrName] : 'null',
+        parent: interfaceAttributeName
+      };
+
+      if(Array.isArray(currentObjectJson[attrInCurrentObject.name])) {
+        const firstAttrType: string = typeof currentObjectJson[attrInCurrentObject.name][0]
+        if (firstAttrType !== 'object') {
+          this.findInterfaceByName(attrInCurrentObject.parent, processedInterfaces).value[attrInCurrentObject.name] = 'Array<' + firstAttrType + '>';
+        } else {
+          let interfaceName: string = this.convertAttributeNameToCamelCase(attrInCurrentObject.name);
+          this.findInterfaceByName(attrInCurrentObject.parent, processedInterfaces).value[attrInCurrentObject.name] = 'Array<' + interfaceName + '>';
+          this.buildInterface(currentObjectJson[attrInCurrentObject.name][0], processedInterfaces, interfaceName);
+        }
+
+      } else if(attrInCurrentObject.type === 'object' && currentObjectJson[attrInCurrentObject.name] !== null) {
+        let interfaceName: string = this.convertAttributeNameToCamelCase(attrInCurrentObject.name);
+        this.findInterfaceByName(attrInCurrentObject.parent, processedInterfaces).value[attrInCurrentObject.name] = interfaceName;
+        this.buildInterface(currentObjectJson[attrInCurrentObject.name], processedInterfaces, interfaceName);
 
       } else {
-        interfaces[interfaces.length - 1].interfaceValue[attr] = json[attr] !== null ? attrType : 'null';
+        this.findInterfaceByName(attrInCurrentObject.parent, processedInterfaces).value[attrInCurrentObject.name] = attrInCurrentObject.type;
       }
     }
   }
@@ -51,6 +61,10 @@ export class JsonConverterService {
     return attributeName.split('_')
     .map(nameSection => nameSection.charAt(0).toUpperCase() + nameSection.slice(1))
     .join('');
+  }
+
+  private findInterfaceByName(objectName: string, objectList: Array<ObjectInterface>) {
+    return objectList.find(object => object.name === objectName);
   }
 
 }
