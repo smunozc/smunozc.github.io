@@ -13,13 +13,13 @@
             </mat-form-field>
         </div>
         <div class="cards">
-            @for (interface of interfaces(); track $index) {
+            @for (interface of jsonConverterService.objectInterfaces(); track $index) {
                 <mat-card class="card">
                     <mat-card-header>
-                        <mat-card-title>{{ interface.interfaceName }}</mat-card-title>
+                        <mat-card-title>{{ interface.name }}</mat-card-title>
                     </mat-card-header>
                     <mat-card-content>
-                        {{ jsonConverterService.stringifyObjectInterface(interface.interfaceValue) }}
+                        {{ jsonConverterService.stringifyObjectInterface(interface.name, interface.value) }}
                     </mat-card-content>
                 </mat-card>
             }

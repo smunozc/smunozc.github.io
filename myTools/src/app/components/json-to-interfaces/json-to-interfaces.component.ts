@@ -6,7 +6,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input'
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { InterfaceModel } from '../../model/interface-model';
+import { ObjectInterface } from '../../model/object-interface';
 
 @Component({
   selector: 'json-to-interfaces',
@@ -25,7 +25,6 @@ export class JsonToInterfacesComponent implements AfterViewInit{
 
   private readonly _injector = inject(Injector);
   protected readonly jsonControl: FormControl<string> = new FormControl('', Validators.required);
-  protected readonly interfaces: WritableSignal<Array<InterfaceModel>> = signal(null);
 
   @ViewChild('autosize') autosize!: CdkTextareaAutosize;
 
@@ -43,7 +42,7 @@ export class JsonToInterfacesComponent implements AfterViewInit{
   }
 
   submitJson() {
-    this.interfaces.set(this.jsonConverterService.convertJsonToInterface(this.jsonControl.value, 'Pokemon'));
+    this.jsonConverterService.convertJsonToInterface(this.jsonControl.value, 'MainInterface');
   }
 
 }
